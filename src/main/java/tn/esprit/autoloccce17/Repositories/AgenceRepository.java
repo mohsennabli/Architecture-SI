@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.autoloccce17.Entities.Agence;
 @Repository
 public interface AgenceRepository extends JpaRepository <Agence, Long> {
-
+    
 }

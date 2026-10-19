@@ -10,7 +10,31 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class AgenceService implements IAgenceService {
-    AgenceRepository agencer;
+    private AgenceRepository agenceRepository ;
+    @Override
+    public Agence ajouterAgence(Agence agence) {
+        return agenceRepository.save(agence);
+    }
+
+    @Override
+    public void supprimerAgence(Long id) {
+        agenceRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Agence> afficherAgences() {
+        return agenceRepository.findAll();
+    }
+
+    @Override
+    public Agence modifierAgence(Agence agence) {
+        return agenceRepository.save(agence);
+    }
+
+    @Override
+    public Agence AfficherAgenceByID(Long id) {
+        return  agenceRepository.findById(id).orElse(null);
+    }
 
     @Override
     public Agence addAgence(Agence agence) {
